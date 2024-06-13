@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import com.jpaandhibernate.springboot.learn_jpa_and_hibernate.course.Course;
+
 
 @Component
 public class CourseJdbcCommandLineRunner implements CommandLineRunner{
@@ -19,9 +21,16 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner{
 		 * use CourseJDBCRepository that you already defined
 		 * */
 		// in CourseJDBCRepository class - implement insert method and invoke it here
-		repository.insert();
+		// repository.insert();
+		repository.insert(new Course(1, "learn Java", "Online"));
+		repository.insert(new Course(2, "back end", "self taught"));
+		repository.insert(new Course(3, "spring", "in28minutes"));
 		
-		repository.deleteById(87);
+		repository.deleteById(1);
+		
+		// findById
+		System.out.println(" ***** Select query output ....... ******* ");
+		System.out.println(repository.findById(3));
 	}
 
 
