@@ -20,6 +20,8 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner{
 		 * */
 		// in CourseJDBCRepository class - implement insert method and invoke it here
 		repository.insert();
+		
+		repository.deleteById(87);
 	}
 
 
