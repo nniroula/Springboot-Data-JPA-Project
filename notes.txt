@@ -1,0 +1,6 @@
+SELECT * FROM COURSE; // course is table name
+
+INSERT INTO course (id, courseName, author)
+VALUES(1, 'Learn Java', 'Nabin');
+
+delete from course where id=1;

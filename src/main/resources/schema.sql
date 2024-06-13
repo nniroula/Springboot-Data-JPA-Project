@@ -1,6 +1,6 @@
 	CREATE TABLE course(
 		id bigint not null,
-		nmae varchar(255) not null,
+		courseName varchar(255) not null,
 		author varchar(255) not null,
 		primary key(id)
 	);
