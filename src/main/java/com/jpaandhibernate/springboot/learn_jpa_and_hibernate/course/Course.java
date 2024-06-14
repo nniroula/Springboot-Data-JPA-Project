@@ -1,6 +1,13 @@
 package com.jpaandhibernate.springboot.learn_jpa_and_hibernate.course;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+//JPA annotations
+
+@Entity 
 public class Course {
+	@Id  // for primary key
 	private long id;
 	private String courseName;
 	private String author;

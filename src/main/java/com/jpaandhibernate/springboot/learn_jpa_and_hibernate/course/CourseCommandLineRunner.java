@@ -1,17 +1,29 @@
-package com.jpaandhibernate.springboot.learn_jpa_and_hibernate.course.jdbc;
+package com.jpaandhibernate.springboot.learn_jpa_and_hibernate.course;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.jpaandhibernate.springboot.learn_jpa_and_hibernate.course.Course;
+import com.jpaandhibernate.springboot.learn_jpa_and_hibernate.course.jdbc.CourseJDBCRepository;
+import com.jpaandhibernate.springboot.learn_jpa_and_hibernate.course.jpa.CourseJpaRepository;
 
 
+//@Component
+//public class CourseJdbcCommandLineRunner implements CommandLineRunner{
+
+
+// rename it with to use with JPA
 @Component
-public class CourseJdbcCommandLineRunner implements CommandLineRunner{
+public class CourseCommandLineRunner implements CommandLineRunner{
 	
+//	@Autowired 
+//	private CourseJDBCRepository repository;
+//	
+	// use Course JPA Repository
 	@Autowired 
-	private CourseJDBCRepository repository;
+	private CourseJpaRepository repository;
+	
 	
 	@Override
 	public void run(String... args) throws Exception {
@@ -22,9 +34,9 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner{
 		 * */
 		// in CourseJDBCRepository class - implement insert method and invoke it here
 		// repository.insert();
-		repository.insert(new Course(1, "learn Java", "Online"));
-		repository.insert(new Course(2, "back end", "self taught"));
-		repository.insert(new Course(3, "spring", "in28minutes"));
+		repository.insert(new Course(1, "learn JS", "JS Online"));
+		repository.insert(new Course(2, "learn JAVA", "Java Self"));
+		repository.insert(new Course(3, "Backend", "Coding Bootcamp"));
 		
 		repository.deleteById(1);
 		
